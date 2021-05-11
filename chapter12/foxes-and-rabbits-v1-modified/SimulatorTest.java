@@ -33,6 +33,7 @@ public class SimulatorTest
     public void setUp()
     {
         testSimulator = new Simulator();
+        testSimulator.simulate(100);
     }
 
     private boolean notDead() 

@@ -58,7 +58,9 @@ public class Simulator
         
         animals = new ArrayList<>();
         field = new Field(depth, width);
+
         populationGeneration = new PopulationGenerator();
+
         animals = populationGeneration.populate(field);
         // Create a view of the state of each location in the field.
         view = new SimulatorView(depth, width);
@@ -73,7 +75,7 @@ public class Simulator
      * Run the simulation from its current state for a reasonably long 
      * period (4000 steps).
      */
-    public void runLongSimulation()
+    public void runLongSimulation() 
     {
         simulate(4000);
     }
