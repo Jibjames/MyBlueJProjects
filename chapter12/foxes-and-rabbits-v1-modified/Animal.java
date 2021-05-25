@@ -39,10 +39,9 @@ public abstract class Animal
     abstract protected int getMaxLitterSize();
 
     abstract protected double getBreedingProbability();
-
-    abstract protected void act(List<Animal> newAnimals);
-
     
+    //abstract protected void act(List<Actor> newActors);
+
     /**
      * Increase the age. This could result in the fox's death.
      */
@@ -59,7 +58,7 @@ public abstract class Animal
         return age >= getBreedingAge();
     }
 
-    protected boolean isAlive()
+    public boolean isAlive()
     {
         return alive;
     }
@@ -106,4 +105,19 @@ public abstract class Animal
         }
         return births;
     }
+
+    /*protected void giveBirth(List<Animal> newAnimals)
+    {
+        // New aniamls are born into adjacent locations.
+        // Get a list of adjacent free locations.
+        
+        List<Location> free = getField().getFreeAdjacentLocations(getLocation());
+        int births = breed();
+        for(int b = 0; b < births && free.size() > 0; b++) {
+            Location loc = free.remove(0);
+            this young = new Object.this(false, getField(), loc);
+            newAnimals.add(young);
+        }
+    }
+    */
 }

@@ -27,5 +27,5 @@ comment8.params=millisec
 comment8.target=void\ delay(int)
 comment8.text=\r\n\ Pause\ for\ a\ given\ time.\r\n\ @param\ millisec\ \ The\ time\ to\ pause\ for,\ in\ milliseconds\r\n
 comment9.params=
-comment9.target=java.util.List\ getAnimals()
+comment9.target=java.util.List\ getActors()
 numComments=11

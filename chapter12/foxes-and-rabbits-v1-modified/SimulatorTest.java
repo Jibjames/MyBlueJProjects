@@ -4,6 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import jdk.jfr.Timestamp;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -39,10 +42,10 @@ public class SimulatorTest
     private boolean notDead() 
     {
         Field field = testSimulator.getField();
-        List<Animal> animals = testSimulator.getAnimals();
+        List<Actor> actors = testSimulator.getActors();
        
 
-        if (animals.stream().anyMatch(r -> r.isAlive() == false)) {
+        if (actors.stream().anyMatch(r -> r.isAlive() == false)) {
             return false;
         }
         return true;   
@@ -51,13 +54,12 @@ public class SimulatorTest
     private boolean isConsistent() 
     {
         Field field = testSimulator.getField();
-        List<Animal> animals = testSimulator.getAnimals();
-          
+        List<Actor> actors = testSimulator.getActors();
 
         for(int i = 0; i <= field.getWidth(); i++) {
             for(int j = 0; j <= field.getDepth(); j++) {
                 
-                if(! animals.contains(field.getObjectAt(i, j))) {
+                if(field.getObjectAt(i, j) instanceof Animal && ! actors.contains(field.getObjectAt(i, j))) {
                     return false;
                 }
             } 
@@ -76,7 +78,6 @@ public class SimulatorTest
         testSimulator.simulateOneStep();
         assertEquals(true, notDead());
     }
-
 
 /**  
     public boolean testtest()

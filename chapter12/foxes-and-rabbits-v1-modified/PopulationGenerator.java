@@ -15,19 +15,19 @@ public class PopulationGenerator
     // The probability that a rabbit will be created in any given position.
     private static final double RABBIT_CREATION_PROBABILITY = 0.08;    
     // Lists of animals in the field.
-    private List<Animal> animals;
+    private List<Actor> actors;
     /**
      * Constructor for objects of class PopulationGenerator
      */
     public PopulationGenerator()
     {
-        animals = new ArrayList<>();
+        actors = new ArrayList<>();
     }
 
     /**
      * Randomly populate the field with foxes and rabbits.
      */
-    public List<Animal> populate(Field field)
+    public List<Actor> populate(Field field)
     {
         Random rand = Randomizer.getRandom();
         field.clear();
@@ -36,16 +36,16 @@ public class PopulationGenerator
                 if(rand.nextDouble() <= FOX_CREATION_PROBABILITY) {
                     Location location = new Location(row, col);
                     Fox fox = new Fox(true, field, location);
-                    animals.add(fox);
+                    actors.add(fox);
                 }
                 else if(rand.nextDouble() <= RABBIT_CREATION_PROBABILITY) {
                     Location location = new Location(row, col);
                     Rabbit rabbit = new Rabbit(true, field, location);
-                    animals.add(rabbit);
+                    actors.add(rabbit);
                 }
                 // else leave the location empty.
             }
         }
-        return animals;
+        return actors;
     }
 }

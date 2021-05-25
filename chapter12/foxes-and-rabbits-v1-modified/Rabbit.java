@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.Random;
 
 /**
  * A simple model of a rabbit.
@@ -8,7 +7,7 @@ import java.util.Random;
  * @author David J. Barnes and Michael Kölling
  * @version 2016.02.29
  */
-public class Rabbit extends Animal
+public class Rabbit extends Animal implements Actor
 {
     // Characteristics shared by all rabbits (class variables).
     // The age at which a rabbit can start to breed.
@@ -19,10 +18,6 @@ public class Rabbit extends Animal
     private static final double BREEDING_PROBABILITY = 0.12;
     // The maximum number of births.
     private static final int MAX_LITTER_SIZE = 4;
-
-    // Individual characteristics (instance fields).
-    // The rabbit's age.
-    private int age;
 
     /**
      * Create a new rabbit. A rabbit may be created with age
@@ -62,7 +57,8 @@ public class Rabbit extends Animal
      * around. Sometimes it will breed or die of old age.
      * @param newRabbits A list to return newly born rabbits.
      */
-    public void act(List<Animal> newRabbits)
+    @Override
+    public void act(List<Actor> newRabbits)
     {
         incrementAge();
         if(isAlive()) {
@@ -78,12 +74,13 @@ public class Rabbit extends Animal
             }
         }
     }
+    
     /**
      * Check whether or not this rabbit is to give birth at this step.
      * New births will be made into free adjacent locations.
      * @param newRabbits A list to return newly born rabbits.
      */
-    private void giveBirth(List<Animal> newRabbits)
+    private void giveBirth(List<Actor> newRabbits)
     {
         // New rabbits are born into adjacent locations.
         // Get a list of adjacent free locations.
