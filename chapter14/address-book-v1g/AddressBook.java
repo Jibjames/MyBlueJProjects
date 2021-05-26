@@ -17,7 +17,7 @@ import java.util.HashMap;
 public class AddressBook
 {
     // Storage for an arbitrary number of details.
-    private HashMap<String, ContactDetails> book;
+    private TreeMap<String, ContactDetails> book;
     private int numberOfEntries;
 
     /**
@@ -25,7 +25,7 @@ public class AddressBook
      */
     public AddressBook()
     {
-        book = new HashMap<>();
+        book = new TreeMap<>();
         numberOfEntries = 0;
     }
     

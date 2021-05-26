@@ -1,15 +1,13 @@
 #BlueJ class context
-comment0.target=class\ AddressBookDemo
-comment0.text=\nProvide\ a\ simple\ demonstration\ of\ the\ AddressBook\ class.\nSample\ data\ is\ added\ to\ the\ address\ book,\nand\ a\ GUI\ view\ is\ provided.\n\n@author\ David\ J.\ Barnes\ and\ Michael\ Kolling.\n@version\ 2005.07.08\n\n
-comment1.target=book
+comment0.target=AddressBookDemo
+comment0.text=\r\n\ Provide\ a\ simple\ demonstration\ of\ the\ AddressBook\ class.\r\n\ Sample\ data\ is\ added\ to\ the\ address\ book,\r\n\ and\ a\ GUI\ view\ is\ provided.\r\n\ \r\n\ @author\ David\ J.\ Barnes\ and\ Michael\ K\u00F6lling.\r\n\ @version\ 2016.02.29\r\n
+comment1.params=
+comment1.target=AddressBookDemo()
+comment1.text=\r\n\ Setup\ an\ AddressBook\ with\ sample\ data.\r\n\ The\ address\ book\ is\ passed\ to\ a\ GUI\ to\ provide\r\n\ a\ view\ of\ the\ data.\r\n
 comment2.params=
-comment2.target=AddressBookDemo()
-comment2.text=\nSetup\ an\ AddressBook\ with\ sample\ data.\nThe\ address\ book\ is\ passed\ to\ a\ GUI\ to\ provide\na\ view\ of\ the\ data.\n\n
-comment3.target=interact
-comment4.params=
-comment4.target=AddressBook\ getBook()
-comment4.text=\n@return\ The\ sample\ address\ book.\n\n
-comment5.params=
-comment5.target=void\ showInterface()
-comment5.text=\nAllow\ the\ user\ to\ interact\ with\ the\ address\ book.\n\n
-numComments=6
+comment2.target=void\ showInterface()
+comment2.text=\r\n\ Allow\ the\ user\ to\ interact\ with\ the\ address\ book.\r\n
+comment3.params=
+comment3.target=AddressBook\ getBook()
+comment3.text=\r\n\ @return\ The\ sample\ address\ book.\r\n
+numComments=4
